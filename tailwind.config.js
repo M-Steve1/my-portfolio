@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{html,ts}",  // Ensures Tailwind processes your templates and components
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        sofia: ['Sofia', 'cursive'],
+      },
+      screens: {
+        custom1001: '1001px'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,73 @@
+<section
+    id="projects"
+    [ngClass]="mode === 'light' ? 'bg-white' : 'bg-black'"
+    class="px-[100px]">
+    <h2 
+        [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+        class="uppercase text-3xl font-sofia font-bold mb-7 text-center">
+        Projects
+    </h2>
+    <div class="flex flex-wrap gap-5 justify-center font-poppins">
+        @for (project of projects; track $index) {
+            <div
+                [ngClass]="{
+                    'hover:border-[#35684e]': mode === 'light',
+                    'hover:border-[#1667BB]': mode === 'dark',
+                    'border-black': mode === 'light',
+                    'border-gray-500': mode === 'dark'
+                }" 
+                class="flex flex-col border h-[600px] w-[450px] rounded-lg p-5  hover:border-[2px]">
+                <div class="mb-10">
+                    <a [href]="project.url" target="_blank">
+                        <img
+                            [ngClass]="mode === 'light' ? 'border-[rgba(0,0,0,0.3)]' : 'border-gray-500'" 
+                            class="rounded-lg border h-[200px] w-[100%]" [src]="project.image" alt="Project Image">
+                    </a>
+                </div>
+                <div class="mb-6">
+                    <span
+                        [ngClass]="mode === 'light' ? 'text-black' : 'text-white'" 
+                        class="uppercase font-bold">
+                        {{ project.name }}
+                    </span>
+                </div>
+                <div
+                    [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'" 
+                    class="flex gap-2 text-xs font-semibold mb-2">
+                    @for (techStack of project.techStacks; track $index) {
+                        <span class="p-1 rounded-md {{ mode === 'light' ? 'bg-[#35684e]/20' : 'bg-[#1667BB]/20'}}">
+                            {{ techStack }}
+                        </span>
+                    }
+                </div>
+                <div class="mb-5 h-[150px]">
+                    <p [ngClass]="mode === 'light' ? 'text-black/70' : 'text-white'">
+                        {{ project.description }}
+                    </p>
+                </div>
+                <div class="flex justify-between px-5">
+                    <a [href]="project.url" target="_blank">
+                    <button
+                        [ngClass]="{
+                            'border-[#35684e] text-[#35684e]': mode === 'light',
+                            'border-[#1667BB] text-[#1667BB]': mode === 'dark',
+                        }"
+                        class="border h-11 w-[95px] rounded-lg">
+                            Visit
+                        </button>
+                    </a>
+                    <a [href]="project.gitHub" target="_blank">
+                        <button
+                             [ngClass]="{
+                            'border-[#35684e] bg-[#35684e]': mode === 'light',
+                            'border-[#1667BB] bg-[#1667BB]': mode === 'dark',
+                            }" 
+                            class="border h-11 w-[100px] rounded-lg text-white">
+                            Github
+                        </button>
+                    </a>
+                </div>
+        </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,54 @@
+<header 
+  [ngClass]="{
+    'shadow-gray-700': mode.toLowerCase() === 'dark',
+    'bg-white': mode.toLowerCase() === 'light',
+    'bg-black': mode.toLowerCase() === 'dark'
+  }"
+  class="shadow-lg px-[100px] py-3 flex items-center justify-between fixed w-[100%]">
+
+    <div class="flex items-center space-x-2">
+      <img src="/assets/logo.png" alt="Profile" class="h-10 w-10 rounded-full object-cover" />
+      <span 
+        [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+        class="text-[1.1rem] font-sofia font-bold">M Stephen</span>
+    </div>
+  
+    <nav
+      [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+      class="hidden font-poppins md:flex space-x-6 gap-10 text-[1.1rem] font-medium">
+      <a href="#" class="hover:text-blue-600">Home</a>
+      <a href="#about" class="hover:text-blue-600">About</a>
+      <a href="#projects" class="hover:text-blue-600">Projects</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    </nav>
+  
+    <button
+      [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+      class="md:hidden" (click)="toggleSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  
+     @if (sidebarOpen) {
+        <div
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+      (click)="toggleSidebar()"
+    >
+      <div class="bg-white font-poppins w-64 h-full p-6" (click)="$event.stopPropagation()">
+        <button class="mb-6" (click)="toggleSidebar()">
+          ✕ Close
+        </button>
+        <nav class="flex flex-col space-y-4">
+          <a href="#" class="hover:text-blue-600">Home</a>
+          <a href="#about" class="hover:text-blue-600">About</a>
+          <a href="#projects" class="hover:text-blue-600">Projects</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </nav>
+      </div>
+  </div>
+     }
+</header>
+  

@@ -1,0 +1,28 @@
+<section
+    [ngClass]="mode === 'light' ? 'bg-white' : 'bg-black'"
+    id="contact" class="custom1001:p-[100px] px-[10px] py-[60px]">
+    <h2 
+        [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+        class="uppercase text-3xl font-sofia font-bold mb-10 text-center">
+        Contact
+    </h2>
+    @if (contactForm) {
+        <form [formGroup]="contactForm" (ngSubmit)="submit()" class="flex flex-col gap-5 font-poppins">
+            <input type="text" formControlName="name" placeholder="Name" class="border border-black rounded-md h-[50px] px-5 font-bold" required>
+            <input type="text" formControlName="email" placeholder="Email" class="border border-black rounded-md h-[50px] px-5 font-bold" required>
+            <textarea placeholder="Message" formControlName="message" rows="10" cols="40" class="border border-black text-black rounded-md p-5 font-poppins" required>
+            </textarea>
+            <button 
+                type="submit"
+                [disabled]="contactForm.invalid"
+                [ngClass]="{
+                    'bg-[#35684e]': mode === 'light',
+                    'bg-[#1667BB]': mode === 'dark',
+
+                }" 
+                class="text-white font-poppins h-[50px] w-[200px] rounded-lg m-auto disabled:bg-gray-400">
+                Send Message
+            </button>
+        </form>
+    }
+</section>

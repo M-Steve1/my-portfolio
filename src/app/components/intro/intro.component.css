@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    .img-container {
+        background: none;
+        border-radius: none;
+    }
+}
