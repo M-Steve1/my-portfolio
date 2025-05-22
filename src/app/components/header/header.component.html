@@ -9,12 +9,12 @@
     <div class="flex items-center space-x-2">
       <img src="/assets/logo.png" alt="Profile" class="h-10 w-10 rounded-full object-cover" />
       <span 
-        [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+        [ngClass]="{'text-black': mode === 'light', 'text-white': mode === 'dark'}"
         class="text-[1.1rem] font-sofia font-bold">M Stephen</span>
     </div>
   
     <nav
-      [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+      [ngClass]="{'text-black': mode === 'light', 'text-white': mode === 'dark'}"
       class="hidden font-poppins md:flex space-x-6 gap-10 text-[1.1rem] font-medium">
       <a href="#" class="hover:text-blue-600">Home</a>
       <a href="#about" class="hover:text-blue-600">About</a>
@@ -23,7 +23,7 @@
     </nav>
   
     <button
-      [ngClass]="mode.toLowerCase() === 'light' ? 'text-black' : 'text-white'"
+      [ngClass]="{'text-black': mode === 'light', 'text-white': mode === 'dark'}"
       class="md:hidden" (click)="toggleSidebar()">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor">

@@ -1,14 +1,14 @@
 <section
     id="about"
-    [ngClass]="mode === 'light' ? 'bg-white' : 'bg-black'"
+    [ngClass]="{'bg-white': mode === 'light', 'bg-black': mode === 'dark'}"
     class="py-[50px] custom1001:p-[100px] px-[10px]">
     <h2 
-        [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+        [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
         class="uppercase text-3xl font-sofia font-bold mb-5 text-center">
         About Me
     </h2>
     <p 
-        [ngClass]="mode === 'light' ? 'text-black' : 'text-white'"
+        [ngClass]="{'text-black': mode === 'light', 'text-white': mode === 'dark'}"
         class="md:text-start text-center font-poppins">
         This first thing you need to know about me is that I am a Software Developer, who loves building for fun. I am passionate about creating functional applications. I get goosebumps when I see people using my Apps. I see a learning opportunity where people see problem and complexity. Collaborating with other Developers has played an important role in making me a better Developer. Making research on modern technologies and utilizing them in my projects puts me several steps ahead with adequate experience.
        <br><br>

@@ -1,5 +1,5 @@
 <section 
-[ngClass]="mode === 'light' ? 'bg-[#35684e]' : 'bg-[#1667BB]'"
+[ngClass]="{'bg-[#35684e]': mode === 'light', 'bg-[#1667BB]': mode === 'dark'}"
 class="flex justify-center text-white border-[3px] [border-style:outset] border-black h-[60px] w-[60px] rounded-full fixed bottom-10 right-10 transition-transform duration-200 ease-in-out 
                hover:scale-105">
     @if (mode.toLocaleLowerCase() === "dark") {

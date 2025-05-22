@@ -1,27 +1,28 @@
 <section 
-    [ngClass]="mode.toLowerCase() === 'light' ? 'bg-white' : 'bg-black'"
+    [ngClass]="{'bg-white': mode === 'light', 'bg-black': mode === 'dark'}"
     class="flex custom1001:justify-between justify-center gap-y-10 flex-wrap items-center custom1001:p-[100px] pt-[100px] px-[10px] font-poppins">
     <div class="md:w-[50%] w-full">
         <div
-            [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'" 
+            [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
             class="text-center md:text-start text-[3.3rem] leading-[5rem] font-extrabold mb-10">
             Hi, I'm Stephen <br>
             <span
-                [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'">
+                [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
+                >
                 Full Stack <br> Javascript <br class="hidden md:inline"> Developer
             </span>
         </div>
         <div class="flex md:items-start flex-col gap-7 md:w-full justify-center items-center">
             <div class="flex flex-wrap justify-center gap-7">
                 <button
-                    [ngClass]="mode === 'light' ? 'bg-[#35684e]' : 'bg-[#1667BB]'" 
+                    [ngClass]="{'bg-[#35684e]': mode === 'light', 'bg-[#1667BB]': mode === 'dark'}"
                     class="text-white h-[50px] w-[140px] rounded-lg">
                     <a href="#contact">
                         Contact
                     </a>
                 </button>
                 <button
-                    [ngClass]="mode === 'light' ? 'bg-[#35684e]' : 'bg-[#1667BB]'" 
+                    [ngClass]="{'bg-[#35684e]': mode === 'light', 'bg-[#1667BB]': mode === 'dark'}"
                     class="text-white h-[50px] w-[200px] rounded-lg">
                     <a href="#projects">
                         Download Resume
@@ -31,14 +32,14 @@
 
             <div class="flex gap-8 ml-1 items-center">
                 <a href="https://www.linkedin.com/in/modebe-stephen/" target="_blank"
-                    [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+                    [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
                     class="rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 24h5V7H0v17zM7.5 7h4.8v2.3h.07c.67-1.3 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66V24h-5v-7.33c0-1.75-.03-4-2.45-4-2.46 0-2.84 1.92-2.84 3.9V24h-5V7z"/>
                     </svg>
                 </a>
                 <a 
-                    [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+                    [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
                     class="rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M22.46 6c-.77.35-1.5.59-2.31.69.83-.5 1.47-1.3 1.77-2.24-.78.46-1.64.8-2.56.98a4.48 4.48 0 0 0-7.64 4.1A12.73 12.73 0 0 1 3.1 4.82a4.48 4.48 0 0 0 1.39 5.98 4.47 4.47 0 0 1-2.03-.56v.06a4.48 4.48 0 0 0 3.6 4.4c-.5.13-1.02.2-1.56.2-.38 0-.76-.03-1.13-.1a4.48 4.48 0 0 0 4.18 3.11 8.98 8.98 0 0 1-5.57 1.92c-.36 0-.71-.02-1.06-.06a12.73 12.73 0 0 0 6.9 2.02c8.28 0 12.8-6.86 12.8-12.8 0-.2 0-.4-.01-.6A9.22 9.22 0 0 0 24 4.6a8.9 8.9 0 0 1-2.54.7z"/>
@@ -46,7 +47,7 @@
                 </a>
                 <a 
                     href="https://github.com/M-Steve1" target="_blank"
-                    [ngClass]="mode === 'light' ? 'text-[#35684e]' : 'text-[#1667BB]'"
+                    [ngClass]="{'text-[#35684e]': mode === 'light', 'text-[#1667BB]': mode === 'dark'}"
                     class="rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.3c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.6-.9 1.6-.9.9-1.6 2.2-1.2 2.7-1 .1-.7.3-1.2.6-1.5-2.6-.3-5.4-1.3-5.4-5.7 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0C17 3.7 18 4 18 4c.6 1.5.2 2.6.1 2.9.8.8 1.2 1.9 1.2 3.2 0 4.4-2.8 5.4-5.4 5.7.4.4.7 1 .7 2v3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
@@ -58,7 +59,7 @@
     </div>
 
     <div
-        [ngClass]="mode === 'light' ? 'bg-[#B3BFAC]' : 'bg-[#0C2F4D]'" 
+        [ngClass]="{'bg-[#B3BFAC]': mode === 'light', 'bg-[#0C2F4D]': mode === 'dark'}"
         class="img-container flex items-center h-50 w-50 md:rounded-full space-x-2">
       <img src="/assets/logo.png" alt="Profile" class="h-50 w-50 md:rounded-full object-cover"/>
     </div>
