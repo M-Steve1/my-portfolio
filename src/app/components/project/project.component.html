@@ -16,7 +16,7 @@
                     'border-black': mode === 'light',
                     'border-gray-500': mode === 'dark'
                 }" 
-                class="flex flex-col border h-[600px] w-[450px] rounded-lg p-5  hover:border-[2px]">
+                class="flex flex-col justify-between md:justify-start border h-max md:h-[600px] w-[450px] rounded-lg p-5  hover:border-[2px]">
                 <div class="mb-10">
                     <a [href]="project.url" target="_blank">
                         <img
@@ -47,7 +47,7 @@
                         {{ project.description }}
                     </p>
                 </div>
-                <div class="flex justify-between px-5">
+                <div class="flex justify-between px-5 gap-5">
                     <a [href]="project.url" target="_blank">
                     <button
                         [ngClass]="{
